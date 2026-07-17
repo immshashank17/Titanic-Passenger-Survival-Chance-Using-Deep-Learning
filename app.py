@@ -57,7 +57,7 @@ st.write(data["Sex"])
 data["Sex"] = label.transform(data["Sex"])
 embarked = onehot.transform(data[['Embarked']])
 embarked=pd.DataFrame(embarked, columns=onehot.get_feature_names_out(['Embarked']))
-data=pd.concat([data.drop(columns='Embarked',axis=1),embarked],axis=1)
+data=pd.concat([data.drop(columns='Embarked'),embarked],axis=1)
 
 data[["Pclass",  "SibSp", "Parch", "Fare"]] = scaler.transform(data[["Pclass", "SibSp", "Parch", "Fare"]])
 
